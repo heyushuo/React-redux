@@ -1,21 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
+import { Add ,Remove } from './redux'
+
+import {connect} from 'react-redux'
+
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+          heyushuo
+        <br/>
+          {this.props.counter}
+        <br/>
+        <input onClick={this.props.Add} type="button" value='加'/>
+        <input onClick={this.props.Remove} type="button" value='减'/>
       </div>
     );
   }
 }
 
-export default App;
+//这里需要用react-redux的 connect来连接 可以接受常用的两个参数
+//这个获取state的值
+const mapStateToProps=(store)=>{
+    return {counter:store.counter}
+}
+//
+const mapDispatchToProps={ Add , Remove }
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(App)
