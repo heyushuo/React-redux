@@ -1,7 +1,7 @@
 
 //定义两个状态常量
-const ADD='ADD';
-const REMOVE='REMOVE'
+export const ADD='ADD';
+export const REMOVE='REMOVE'
 
 
 //action

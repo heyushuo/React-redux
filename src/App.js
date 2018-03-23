@@ -24,7 +24,7 @@ class App extends React.Component {
 const mapStateToProps=(store)=>{
     return {counter:store.counter}
 }
-//
+
 const mapDispatchToProps={ Add , Remove }
 
 export default connect(
