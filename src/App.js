@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          heyushuo
+         Readux实战中使用方法
         <br/>
           {this.props.counter}
         <br/>
